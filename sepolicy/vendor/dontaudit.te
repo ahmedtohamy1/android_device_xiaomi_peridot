@@ -1,3 +1,8 @@
 # Only apps targetting < Q are allowed to open /dev/ashmem directly.
 # Apps must use ASharedMemory NDK API. Native code must use libcutils API.
 dontaudit untrusted_app ashmem_device:chr_file open;
+
+# Camera hal
+dontaudit {
+  hal_camera_default
+} default_prop:file r_file_perms;
