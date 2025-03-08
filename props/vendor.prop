@@ -40,6 +40,9 @@ vendor.audio_hal.period_size=192
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 
+# Adaptive Suspend
+suspend.short_suspend_threshold_millis=5000
+
 # Bluetooth
 bluetooth.profile.asha.central.enabled=true
 bluetooth.profile.bap.broadcast.assist.enabled=true
