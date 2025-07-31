@@ -160,7 +160,9 @@ TARGET_KERNEL_EXT_MODULES := \
     nxp/opensource/driver
 
 # Partitions
+ifneq ($(PRODUCT_RO_FILE_SYSTEM), erofs)
 -include vendor/lineage/config/BoardConfigReservedSize.mk
+endif
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
