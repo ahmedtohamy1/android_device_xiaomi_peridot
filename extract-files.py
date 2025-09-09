@@ -18,6 +18,8 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'device/xiaomi/peridot',
+    'hardware/dolby',
     'hardware/qcom-caf/sm8650',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
