@@ -6,6 +6,10 @@
 
 DEVICE_PATH := device/xiaomi/peridot
 
+TARGET_USES_VULKAN := true
+
+
+
 BUILD_BROKEN_DUP_RULES := true
 
 # A/B
