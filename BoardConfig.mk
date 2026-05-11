@@ -8,6 +8,12 @@ DEVICE_PATH := device/xiaomi/peridot
 
 TARGET_USES_VULKAN := true
 
+# MiuiCamera
+CAMERA_PACKAGE_NAME := com.android.camera
+
+
+# Inherit from proprietary files for miuicamera
+-include device/xiaomi/peridot-miuicamera/BoardConfig.mk
 
 
 BUILD_BROKEN_DUP_RULES := true
