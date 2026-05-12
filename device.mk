@@ -155,7 +155,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dolby/dax-default-spatializer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default-spatializer.xml \
 
 PRODUCT_PACKAGES += \
-    XiaomiDolby
+    LunarisDolby
 
 # DRM
 PRODUCT_PACKAGES += \

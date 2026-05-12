@@ -26,3 +26,8 @@ bluetooth.profile.vcp.controller.enabled=false
 
 # Media
 media.stagefright.audio.deep=true
+# MTE
+persist.arm64.memtag.app.com.android.se=off 
+persist.arm64.memtag.app.com.google.android.bluetooth=off 
+persist.arm64.memtag.app.com.android.nfc=off 
+persist.arm64.memtag.process.system_server=off
