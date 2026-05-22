@@ -8,8 +8,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 
-# Call the MiuiCamera setup
-$(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -176,8 +174,7 @@ PRODUCT_COPY_FILES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-  android.hardware.graphics.composer3-V2-ndk.vendor \
-    android.hardware.graphics.common-V4-ndk
+  android.hardware.graphics.composer3-V2-ndk.vendor
 
 
 PRODUCT_COPY_FILES += \
