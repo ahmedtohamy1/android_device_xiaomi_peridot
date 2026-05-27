@@ -61,6 +61,9 @@ TARGET_NO_BOOTLOADER := true
 TARGET_SCREEN_DENSITY := 480
 TARGET_USES_VULKAN := true
 
+# Inherit from proprietary files for miuicamera
+-include device/xiaomi/peridot-miuicamera/BoardConfig.mk
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
