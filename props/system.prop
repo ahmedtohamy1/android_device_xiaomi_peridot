@@ -8,3 +8,31 @@ ro.vendor.qti.va_aosp.support=1
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
 ro.media.xml_variant.profiles=_cliffs_v0
+
+# Audio
+af.resampler.quality=7 
+ro.audio.usb.period_us=20375 
+ro.audio.resampler.psd.stopband=144
+ro.audio.resampler.psd.halflength=960 
+ro.audio.resampler.psd.cutoff_percent=100 
+ro.audio.resampler.psd.tbwcheat=0 
+ro.audio.resampler.psd.enable_at_samplerate=44100
+persist.bluetooth.sbc_hd_higher_bitrate=1ro.product.mod_device=peridot_global
+
+# Battery
+ro.config.small_battery=true
+
+# Dalvik
+dalvik.vm.systemuicompilerfilter=speed 
+dalvik.vm.systemservercompilerfilter=speed 
+dalvik.vm.usap_pool_enabled=true 
+dalvik.vm.usap_refill_threshold=1
+dalvik.vm.usap_pool_size_max=10 
+dalvik.vm.usap_pool_size_min=1 
+dalvik.vm.usap_pool_refill_delay_ms=3000
+debug.renderengine.backend=skiavkthreaded
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=0
+debug.sf.auto_latch_unsignaled=true
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
