@@ -11,7 +11,7 @@
 #define L_NODE "/sys/class/power_supply/battery/charge_control_limit"
 #define FC_NODE "/sys/class/qcom-battery/fastcharge_enable"
 
-#define HYSTERESIS 10 
+#define HYSTERESIS 10
 
 int calculate_target_idx(int t, int mode, int current_idx) {
     int target = 0;
@@ -32,9 +32,9 @@ int calculate_target_idx(int t, int mode, int current_idx) {
             break;
 
         case 2:
-            if (t >= 440) target = 16;
-            else if (t >= 410) target = 10;
-            else if (t >= 380) target = 5;
+            if (t >= 400) target = 16;
+            else if (t >= 385) target = 10;
+            else if (t >= 370) target = 5;
             else target = 0;
             break;
 
@@ -45,13 +45,19 @@ int calculate_target_idx(int t, int mode, int current_idx) {
 
     if (target < current_idx) {
         int drop_allowance = 0;
-        if (current_idx == 16) drop_allowance = (mode == 2) ? 440 : (mode == 1 ? 410 : 370);
-        else if (current_idx == 10) drop_allowance = (mode == 2) ? 410 : (mode == 1 ? 390 : 350);
-        else if (current_idx == 5) drop_allowance = (mode == 2) ? 380 : (mode == 1 ? 370 : 330);
 
-        if (t > (drop_allowance - HYSTERESIS)) {
+        if (current_idx == 16)
+            drop_allowance = (mode == 2) ? 400 :
+                             (mode == 1 ? 410 : 370);
+        else if (current_idx == 10)
+            drop_allowance = (mode == 2) ? 385 :
+                             (mode == 1 ? 390 : 350);
+        else if (current_idx == 5)
+            drop_allowance = (mode == 2) ? 370 :
+                             (mode == 1 ? 370 : 330);
+
+        if (t > (drop_allowance - HYSTERESIS))
             return current_idx;
-        }
     }
 
     return target;
@@ -91,13 +97,13 @@ int main() {
             if (f_l.is_open()) {
                 f_l << idx;
                 f_l.close();
-                
-                LOGI("[Status Change] Temp: %d.%d°C | Mode: %d | Scaling Index: %d", 
+
+                LOGI("[Status Change] Temp: %d.%d°C | Mode: %d | Scaling Index: %d",
                      t / 10, t % 10, fast_charge_mode, idx);
-                
+
                 last_idx = idx;
                 last_mode = fast_charge_mode;
-                current_sleep = 2; 
+                current_sleep = 2;
             } else {
                 LOGW("Write target failure on charge_control_limit sysfs entry.");
             }
@@ -107,5 +113,6 @@ int main() {
 
         std::this_thread::sleep_for(std::chrono::seconds(current_sleep));
     }
+
     return 0;
 }
