@@ -23,6 +23,9 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# NotGameTurbo
+$(call inherit-product, packages/apps/NotGameTurbo/notgameturbo.mk)
+
 # UFFD GC
 PRODUCT_ENABLE_UFFD_GC := true
 
