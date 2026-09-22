@@ -92,8 +92,6 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system_ext/etc/init/qspa_system.rc': blob_fixup()
         .regex_replace(r'\$\{ro\.boot\.vendor\.qspa:-default\}', 'default'),
-    'system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml': blob_fixup()
-        .regex_replace(r'(?s)^.*?(?=<manifest)', ''),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed(
             'android.media.audio.common.types-V4-cpp.so',
@@ -329,7 +327,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/xtra-daemon',
         'vendor/lib64/libcne.so',
         'vendor/lib64/libqcc_sdk.so',
-        'vendor/lib64/libqms_client.so',
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
