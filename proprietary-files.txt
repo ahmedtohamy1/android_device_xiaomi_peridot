@@ -19,6 +19,15 @@ vendor/lib64/libadsp_default_listener.so
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service|893132de163868f23a5685b9457b2e105e28d821
 # Dolby AC-4 OEM blob (DolbyAc4Blob) - from pdx245
 vendor/lib64/liboem_specific.so
+# Dolby AC-4 capable software decode chain (same dump as above; stock peridot chain is AC-4 silent)
+vendor/lib64/libcodec2_soft_ac4dec.so
+vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/libcodec2_soft_dolby.so
+vendor/lib64/libcodec2_store_dolby.so
+vendor/lib64/libdeccfg.so
+vendor/lib64/libdapparamstorage-dolby.so
+vendor/lib64/libstagefright_foundation-dolby.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0-dolby.so
 
 # ADSP modules
 odm/lib/rfsa/adsp/capi_elus_rx.so
@@ -1785,10 +1794,6 @@ vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libcodec2_soft_ac4dec.so
-vendor/lib64/libcodec2_soft_ddpdec.so
-vendor/lib64/libcodec2_store_dolby.so
-vendor/lib64/libdeccfg.so
 vendor/lib64/libdolbyclstc.so
 vendor/lib64/libdolbydecoderprocessor.so
 vendor/lib64/libdolbyeglcore.so
