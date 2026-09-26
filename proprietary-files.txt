@@ -17,6 +17,8 @@ vendor/lib64/libadsp_default_listener.so
 
 # Dolby (codec2) - from pdx245
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service|893132de163868f23a5685b9457b2e105e28d821
+# Dolby AC-4 OEM blob (DolbyAc4Blob) - from pdx245
+vendor/lib64/liboem_specific.so
 
 # ADSP modules
 odm/lib/rfsa/adsp/capi_elus_rx.so
